@@ -32,3 +32,4 @@ elección. (Frontend)
 ## Desarrollo
 * Se procesó el dataset y posteriormente se subieron los datos como migración a través de Django.
 * Se utilizó MySQL, Django, Bootstrap y Chart.js.
+![Screenshot](Front/dashboard_img.jpg)
