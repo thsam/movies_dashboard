@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+    <link href="https://demo.dashboardpack.com/architectui-html-free/main.css" rel="stylesheet"></head>
+    <!-- graficos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"></script>
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1 class="text-center">Dashboard</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 mb-3  card border-primary text-primary" style="width: 18rem;">
+                <h2 class="users-number"></h2>
+                <h3>Usuarios</h3>
+            </div>
+            <div class="col-md-3 mb-3  card border-info text-info " style="width: 18rem;">
+                <h2 class="score-max"></h2>
+                <h3>Max. Score Value</h3>
+            </div>
+            <div class="col-md-3 mb-3  card border-success text-success" style="width: 18rem;">
+                <h2 class="score-min"></h2>
+                <h3>Min. Score Value</h3>
+            </div>
+            <div class="col-md-3 mb-3  card border-warning text-warning" style="width: 18rem;">
+                <h2 class="score-avg"></h2>
+                <h3>Prom. Score Value</h3>
+            </div>
+        </div>
+    </div>
+    <h3 class="text-center">Filtros</h3>
+
+    <div class="container">
+        <div class="row d-flex justify-content-center align-items-center">
+            <form id="compose-form">
+                <label for="start">Start date:</label>
+                <input type="date" id="filtro-fechai" name="trip-start"
+                    value="2000-01-25"
+                    min="2000-01-01" max="2021-07-22">
+                <label for="fin">Final date:</label>
+
+                <input type="date" id="filtro-fechaf" name="trip-fin"
+                    value="2021-07-22"
+                    min="2000-01-01" max="2021-07-22">
+                <div class="form-group">
+                    <input class="form-control" id="filtro-pelicula" placeholder="pelicula">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="filtro-usuario" placeholder="usuario">
+                </div>
+            </form>
+        </div>
+    </div>
+    <h3 class="text-center">Top 10 Max Score</h3>
+    <div class="container">
+        <table id="table" class="table" >
+        <thead class="thead-dark">
+            <tr>
+                <th data-field="id">ID</th>
+                <th data-field="movie">Movie</th>
+                <th data-field="user">User</th>
+                <th data-field="score">Score</th>
+                <th data-field="helpfulness">helpfulness</th>
+                <th data-field="date">Date</th>
+                <th data-field="summary">Summary</th>
+                
+            </tr>
+        </thead>
+    </table>
+    </div>
+    <h3 class="text-center">Top 10 Min Score</h3>
+    <div class="container">
+        <table id="table2" class="table" >
+        <thead class="thead-dark">
+            <tr class="bg-primary">
+                <th data-field="id">ID</th>
+                <th data-field="movie">Movie</th>
+                <th data-field="user">User</th>
+                <th data-field="score">Score</th>
+                <th data-field="helpfulness">helpfulness</th>
+                <th data-field="date">Date</th>
+                <th data-field="summary">Summary</th>
+                
+            </tr>
+        </thead>
+    </table>
+    </div>
+    
+    <div style="width: 500px;"class="holi">
+        <canvas id="chart" width="100" height="100"></canvas>
+    </div>
+</body>
+</html>
